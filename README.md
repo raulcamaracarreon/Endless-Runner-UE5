@@ -3,6 +3,7 @@
 ![Engine](https://img.shields.io/badge/Engine-Unreal%20Engine%205-black)
 ![Genre](https://img.shields.io/badge/Genre-Endless%20Runner-orange)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20(PC)-blue)
+![Input](https://img.shields.io/badge/Input-Keyboard%20%7C%20Gamepad-green)
 ![Status](https://img.shields.io/badge/Status-Prototype%20Demo-yellow)
 
 **Gold Rush City** es un prototipo de "Infinite Runner" de alta velocidad desarrollado en Unreal Engine 5. El proyecto demuestra la implementación de mecánicas de generación procedural de niveles, optimización de recursos en tiempo real y lógica de juego a través de Visual Scripting (Blueprints).
@@ -19,12 +20,11 @@ El juego no utiliza un mapa estático infinito. En su lugar, implementa un siste
 
 ### 2. Lógica en Blueprints
 Toda la jugabilidad fue programada utilizando el sistema de nodos de UE5.
-* **Player Controller:** Manejo de Inputs, física de salto, deslizamiento (slide) y detección de colisiones.
+* **Player Controller:** Manejo de Inputs híbridos (Teclado/Mando), física de salto, dash y mecánicas de ataque (Slash).
 * **Game Loop:** Gestión de estados de juego (Menú -> Run -> Game Over -> Restart).
 * **Score System:** Cálculo de puntaje basado en distancia y recolección de items.
 
 ![Blueprints Logic](screenshots/GoldRushCity_bp.jpg)
-*(Vista de la lógica interna del controlador del personaje)*
 
 ### 3. Interfaz de Usuario (UMG)
 Implementación de Widgets para el HUD y menús interactivos.
@@ -37,9 +37,26 @@ Implementación de Widgets para el HUD y menús interactivos.
 
 ## 🎮 Controles
 
-* **W / Flecha Arriba / Espacio:** Saltar.
-* **S / Flecha Abajo:** Deslizarse (Slide).
-* **A / D / Flechas Laterales:** Moverse entre carriles.
+El juego soporta tanto teclado clásico como Gamepad (PlayStation/Xbox/Genérico).
+
+| Acción | Teclado ⌨️ | Gamepad 🎮 |
+| :--- | :--- | :--- |
+| **Moverse (Carriles)** | Flechas Izquierda / Derecha | D-Pad o Stick Izquierdo |
+| **Saltar** | Barra Espaciadora | Botón X (o equivalente) |
+| **Atacar (Slash)** | Ctrl Izquierdo | Gatillo R2 (RT) |
+
+---
+
+## 🕹️ Cómo jugar con Mando (Steam Input)
+
+Para garantizar la compatibilidad con tu control (PS4, PS5, Xbox, etc.), se recomienda ejecutar el juego a través de **Steam**:
+
+1.  Abre Steam en tu PC.
+2.  Ve al menú **"Juegos"** -> **"Añadir un producto que no es de Steam a mi biblioteca..."**.
+3.  Busca y selecciona el archivo `GoldRushCity.exe` que descargaste.
+4.  Inicia el juego desde tu biblioteca de Steam.
+
+*Esto activará **Steam Input**, permitiendo que el juego reconozca los inputs de tu mando correctamente.*
 
 ---
 
@@ -58,4 +75,4 @@ Este proyecto ha sido empaquetado como un ejecutable standalone para Windows.
 
 > **Autor:** Raúl Héctor Cámara Carreón
 >
-> *Desarrollado como parte del portafolio de Desarrollo de Videojuegos y Lógica Computacional.*
+
